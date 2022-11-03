@@ -9,7 +9,7 @@ const totalTime = document.querySelector("#totalTime");
 
 let hasFlippedCard = false;
 let firstCard, secondCard;
-let lockBoard = false; //ard arda 4 tıklamaya izin vermemek icin
+let lockBoard = false;
 let totalSeconds = 0;
 let interval;
 let finalTime;
@@ -21,13 +21,11 @@ function flipCard() {
   this.classList.add("flip");
 
   if (!hasFlippedCard) {
-    // first click
     hasFlippedCard = true;
     firstCard = this;
     startTime();
     return;
   }
-  //second click
   secondCard = this;
   checkForMatch();
 }
@@ -38,7 +36,6 @@ function checkForMatch() {
 }
 
 function disableCards() {
-  //eşleştiğinde
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
   resetBoard();
@@ -47,7 +44,6 @@ function disableCards() {
 
 function unFlipCards() {
   lockBoard = true;
-  //not match
   setTimeout(() => {
     firstCard.classList.remove("flip");
     secondCard.classList.remove("flip");
@@ -56,22 +52,18 @@ function unFlipCards() {
 }
 
 function resetBoard() {
-  // card döndüğünde tekrar tıklayabilmemizi sağlar
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
 
-//refresh butonuna basildiginda
 refresh.addEventListener("click", function () {
   confirm("Estás segur@ de volver a reiniciar el juego?");
   location.reload();
 });
 
-//zaman göstergesi
 function startTime() {
   if (click === -1) {
     interval = setInterval(function () {
-      //interval belirli araliklarla sürekli çalişmasini saglar.
       final.innerHTML = "Felicitaciones. acabaste de ganar en un tiempo de: " + finalTime + "!";
       finalTime = minute.innerHTML + ":" + second.innerHTML;
       totalSeconds++;
@@ -83,7 +75,6 @@ function startTime() {
 }
 
 function pad(val) {
-  // 00:00 şeklinde ilerlesin zaman.
   const valString = val + "";
   if (valString.length < 2) {
     return "0" + valString;
@@ -92,10 +83,8 @@ function pad(val) {
   }
 }
 
-//game won
 function gameWon() {
   if (click < 1) {
-    // clickler saniyenin durması için. Oyun bitse dahi saniye devam etmesini engeller.
     firstCard = e.target;
   }
 
@@ -109,7 +98,6 @@ function gameWon() {
   click = 0;
 }
 
-//congrats section'da again butonu
 again.addEventListener("click", function () {
   congratsSection.classList.replace("show", "hidden");
   location.reload();
