@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/assets/icons8-brain-emoji-32.ico">
+
+  <!-- CSS -->
+       <link rel="stylesheet" href="style.css">
+
+    <title> Juego de Memoría </title>
+</head>
+<body>
+   
+    <br>
+      <h1>Juego de Memoría</h1>
+        <div class="topTools">            
+            <!-- <span class="moves"> Move(s)</span> -->
+            <div class="time">
+                <span class="minute">00</span>
+                <span>:</span>
+                <span class="second">00</span>
+             </div>
+                   
+            <span class="refresh"><img src="./assets/refresh.svg" alt="refreshImage"></i></span>
+        </div> 
+
+    <section class="memory-game">    
+        <div class="memory-card" data-id="1"> 
+            <img class="front-face" src="./assets/elephant.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="1">
+            <img class="front-face" src="./assets/elephant.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="2">
+            <img class="front-face" src="./assets/giraffe.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="2">
+            <img class="front-face" src="./assets/giraffe.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="3">
+            <img class="front-face" src="./assets/lion.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="3">
+            <img class="front-face" src="./assets/lion.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="4">
+            <img class="front-face" src="./assets/turtle.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="4">
+            <img class="front-face" src="./assets/turtle.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="5">
+            <img class="front-face" src="./assets/whale.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="5">
+            <img class="front-face" src="./assets/whale.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="6">
+            <img class="front-face" src="./assets/zebra.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+        <div class="memory-card" data-id="6">
+            <img class="front-face" src="./assets/zebra.png" alt="Front image">
+            <div class="back-face"></div>
+        </div>
+    </section>
+
+    
+    <!-- Oyun tamamlaninca çikacak ekran -->
+    <section id="congratsSection" class="hidden">   
+        <div id="congratsDiv">
+            <img src="./assets/congrats.png" alt="congratsImage">
+            <p class="final">
+                <span id="totalTime"></span>
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+                <a class="again">Jugar de nuevo !! </a>
+            </p>
+        </div>
+    </section>
+    
+    <br>
+    <h3 class="XD">Ashley Guzmán Hernandez</h3>
+
+
+   <script src="app.js"></script>
+</body>
+</html>
